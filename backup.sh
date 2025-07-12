@@ -2,16 +2,17 @@
 
 BOT_TOKEN="{{TOKEN}}"
 CHAT_ID="{{CHAT_ID}}"
+PANEL_URL="{{PANEL_URL}}"
+USERNAME="{{PANEL_USER}}"
+PASSWORD="{{PANEL_PASS}}"
 
 BACKUP_DIR="/var/www/html/p/backup"
 TMP_ZIP="/tmp/backup_$(date +%Y-%m-%d-%H%M%S).zip"
 COOKIE_FILE="/tmp/cookies.txt"
 NOW=$(date +"%Y-%m-%d-%H%M%S")
 
-LOGIN_URL="https://ssh.adakvps.ir/p/login.php"
-BACKUP_URL="https://ssh.adakvps.ir/p/setting.php?backupfull=$NOW"
-USERNAME="amirr"
-PASSWORD="admin3175"
+LOGIN_URL="$PANEL_URL/p/login.php"
+BACKUP_URL="$PANEL_URL/p/setting.php?backupfull=$NOW"
 
 echo "[$NOW] Logging in to panel..."
 curl -s -c "$COOKIE_FILE" -d "username=$USERNAME&password=$PASSWORD&loginsubmit=ورود" "$LOGIN_URL" > /dev/null
