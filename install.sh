@@ -9,8 +9,34 @@ read BOT_TOKEN
 echo "🆔 Enter your Telegram numeric chat ID:"
 read CHAT_ID
 
-# Generate backup.sh with user input
-sed "s|{{TOKEN}}|$BOT_TOKEN|g; s|{{CHAT_ID}}|$CHAT_ID|g" backup.sh > /root/backup.sh
+echo "🌐 Enter panel URL (example: https://ssh.adakvps.ir):"
+read PANEL_URL
+
+echo "👤 Enter panel username:"
+read PANEL_USER
+
+echo "🔒 Enter panel password:"
+read -s PANEL_PASS
+
+# Test login to panel
+COOKIE_FILE="/tmp/install_login_cookie.txt"
+LOGIN_RESPONSE=$(curl -s -c "$COOKIE_FILE" -d "username=$PANEL_USER&password=$PANEL_PASS&loginsubmit=ورود" "$PANEL_URL/p/login.php")
+
+if echo "$LOGIN_RESPONSE" | grep -q "setting.php"; then
+    echo "✅ Login successful to $PANEL_URL"
+else
+    echo "❌ Login failed. Please check URL, username, or password."
+    exit 1
+fi
+
+rm -f "$COOKIE_FILE"
+
+# Generate backup.sh
+sed "s|{{TOKEN}}|$BOT_TOKEN|g;
+     s|{{CHAT_ID}}|$CHAT_ID|g;
+     s|{{PANEL_URL}}|$PANEL_URL|g;
+     s|{{PANEL_USER}}|$PANEL_USER|g;
+     s|{{PANEL_PASS}}|$PANEL_PASS|g" backup.sh > /root/backup.sh
 chmod +x /root/backup.sh
 
 # Create backup folder
