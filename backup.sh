@@ -5,7 +5,7 @@ echo "📦 Updating packages and installing curl, zip..."
 apt update && apt install curl zip -y
 
 # ───── Get User Input ─────
-read -p "🔹 Enter domain (e.g., ssh.adakmiz.ir): " DOMAIN
+read -p "🔹 Enter domain (e.g., ssh.example.ir): " DOMAIN
 read -p "🔹 Enter panel username: " USERNAME
 read -p "🔹 Enter panel password: " PASSWORD
 read -p "🔹 Enter Telegram Bot Token: " TELEGRAM_BOT_TOKEN
