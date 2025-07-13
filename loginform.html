@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ورود | کنترل پنل</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="dist/css/rtl.css">
+  <link rel="stylesheet" href="dist/css/login.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.css">
+  <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.svg">
+  <style>
+    @media screen and (max-width: 600px) {
+      .rightads {
+        display: none;
+      }
+      .leftads {
+        display: none;
+      }
+    }
+    .rightads {
+      background-color: #b5b5b5;
+      right: 10px;
+      position: absolute;
+      bottom: 10px;
+      width: 200px;
+      padding-top: 50px;
+      height: 300px;
+      font-family: Vazir;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .leftads {
+      background-color: #b5b5b5;
+      left: 10px;
+      position: absolute;
+      bottom: 10px;
+      width: 200px;
+      padding-top: 50px;
+      height: 300px;
+      font-family: Vazir;
+      text-align: center;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="hold-transition login-page"
+  style="background: url(https://raw.githubusercontent.com/HamedAp/Ssh-User-management/main/screenshot/background.jpg) no-repeat center;background-size: cover;">
+  <form action="login.php" method="post">
+    <div class="ring">
+      <!-- <i style="--clr:#00ff0a;"></i>
+      <i style="--clr:#ff0057;"></i>
+      <i style="--clr:#fffd44;"></i> -->
+      <div class="login-box">
+        <div class="login-logo">
+          <a href="login.php"><b>ورود به پنل</b></a>
+        </div>
+        <div class="login-box-body">
+          <p class="login-box-msg">جهت ورود نام کاربری و رمز را وارد کنید</p>
+          <form action="login.php" method="post">
+            <div class="form-group has-feedback">
+              <!-- <input onkeydown="return /[a-zA-Z0-9]/i.test(event.key)" name="username" class="form-control" placeholder="نام کاربری" style="direction: ltr;"> -->
+              <input name="username" class="form-control" placeholder="نام کاربری" style="direction: ltr;">
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+              <!-- <input onkeydown="return /[a-zA-Z0-9]/i.test(event.key)" type="password" name="password" class="form-control" placeholder="رمز عبور" style="direction: ltr;"> -->
+              <input type="password" name="password" class="form-control" placeholder="رمز عبور"
+                style="direction: ltr;">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="checkbox icheck">
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <button name="loginsubmit" type="submit" class="btn btn-primary btn-block btn-flat"
+                  style="border-radius: 10px;">ورود</button>
+                              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="plugins/iCheck/icheck.min.js"></script>
+</body>
+</html>
